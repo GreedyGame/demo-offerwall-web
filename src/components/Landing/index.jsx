@@ -1,14 +1,11 @@
 const Landing = (props) => {
   const handleOpenWOW = () => {
-    // https://wow-dev.pubscale.com/?app_id=41254231&user_id=test_jjs&sandbox=false
+    const userId = props.userId;
+    const appId = props.appId;
 
-    // const baseURL = `https://wow-dev.pubscale.com/`; // move this to env variable
-    const baseURL = `http://localhost:3002/`; // move this to env variable
-    const WowUrl = new URL(baseURL);
-    WowUrl.searchParams.set("app_id", "61575841");
-    WowUrl.searchParams.set("user_id", props.userId);
-    WowUrl.searchParams.set("sandbox", "true"); // Flage must be true if you want to enable sandbox mode
-    window.open(WowUrl.href, "_blank");
+    const url = `https://wow.pubscale.com/?app_id=${appId}&user_id=${userId}&sandbox=false`;
+
+    window.open(url, "_blank");
   };
   return (
     <div className="pl-32 pr-32 pt-14 pb-14 mt-[var(--nav-height)] grid lg:grid-cols-[1fr_1fr] items-center  ">
