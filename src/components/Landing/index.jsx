@@ -2,8 +2,9 @@ const Landing = (props) => {
   const handleOpenWOW = () => {
     const userId = props.userId;
     const appId = props.appId;
+    const sandbox = props.sandbox;
 
-    const url = `https://wow.pubscale.com/?app_id=${appId}&user_id=${userId}&sandbox=false`;
+    const url = `https://wow.pubscale.com/?app_id=${appId}&user_id=${userId}&sandbox=${sandbox}`;
 
     window.open(url, "_blank");
   };
